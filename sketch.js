@@ -86,3 +86,14 @@ function keyPressed(){
        // slingshot.attach(bird.body);
     }
 }
+
+async function getTime()
+{
+    
+    var time_api = "http://worldtimeapi.org/api/timezone/Asia/kolkata";
+    var response = await fetch(time_api);
+    var response_json = await response.json();
+    var datetime = response_json.datetime;
+    var hour = datetime.slice(11,13)
+    console.log(hour); 
+}
